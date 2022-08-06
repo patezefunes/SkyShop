@@ -3,13 +3,15 @@ import { CarouselType } from './carousel.types'
 
 const initialState: CarouselType = {
   selectedCountry: '',
+  countryId: '',
 }
 const carouselSlice = createSlice({
   name: 'carousel',
   initialState,
   reducers: {
-    setTitle(state: CarouselType, action: PayloadAction<string>) {
-      state.selectedCountry = action.payload
+    setTitle(state: CarouselType, action: PayloadAction<CarouselType>) {
+      state.selectedCountry = action.payload.selectedCountry
+      state.countryId = action.payload.countryId
     },
   },
 })

@@ -4,10 +4,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FC } from 'react'
-import { shallowEqual, useSelector } from 'react-redux'
+import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import requestData from 'store/details/actions'
 import Carousel from '../../components/carousel'
 import { carouselData } from '../../data/carouselData'
-import { RootState } from '../../store/store'
+import { AppDispatch, RootState } from '../../store/store'
 import {
   MainContainer,
   SliderContainer,
@@ -16,18 +18,29 @@ import {
 } from './subcomponents'
 const Slider: FC = () => {
   const {
-    carousel: { selectedCountry },
+    carousel: { selectedCountry, countryId },
   } = useSelector((state: RootState) => state, shallowEqual)
+
+  const dispatch = useDispatch<AppDispatch>()
+  const navigate = useNavigate()
+
+  const handleNavigate = async () => {
+    await dispatch(requestData(countryId))
+    navigate('/details')
+  }
+
   return (
     <MainContainer>
       <SliderTitle>
         <span>Planes turísticos</span>
-        <SliderTitleInfo>{selectedCountry}</SliderTitleInfo>
+        <SliderTitleInfo onClick={handleNavigate}>
+          {selectedCountry}
+        </SliderTitleInfo>
       </SliderTitle>
       <SliderContainer>
-        <FontAwesomeIcon icon={faAngleDoubleLeft} size="6x" />
+        <FontAwesomeIcon icon={faAngleDoubleLeft} />
         <Carousel data={carouselData} />
-        <FontAwesomeIcon icon={faAngleDoubleRight} size="6x" />
+        <FontAwesomeIcon icon={faAngleDoubleRight} />
       </SliderContainer>
     </MainContainer>
   )

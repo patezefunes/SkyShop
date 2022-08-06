@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { themes } from 'themes'
 
 export const DetailContainer = styled.div`
   margin-top: 10% !important;
@@ -9,7 +10,13 @@ export const DetailContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   width: 300px;
-  height: 200px;
-  background-color: white;
+  height: 400px;
+  background-color: ${themes.grayRGBA};
   padding: 20px 0;
+`
+
+export const DetailImage = styled.img`
+  width: 90%;
+  height: 50%;
+  object-fit: fill;
 `

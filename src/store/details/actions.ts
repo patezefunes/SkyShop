@@ -1,20 +1,20 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { fetchDetails } from 'utils/fetchDetails'
-import { DetailError, DetailReturnType } from './typings'
+import { CountryId, DetailError, DetailReturnType } from './typings'
 
 const requestData = createAsyncThunk<
   DetailReturnType,
-  null,
+  CountryId,
   { rejectValue: DetailError }
->('details/fetchDetails', async (resolve, { rejectWithValue }) => {
+>('details/fetchDetails', async (countryId, { rejectWithValue }) => {
   try {
-    const response = await fetchDetails()
+    const response = await fetchDetails(countryId)
 
-    const { name, climate, population } = response
+    const { name, capital, flagImageUri } = response.data
 
     console.log('Response is: ' + name)
 
-    return { name, climate, population } as DetailReturnType
+    return { name, capital, flagImageUri } as DetailReturnType
   } catch (error) {
     return rejectWithValue(error)
   }

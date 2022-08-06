@@ -1,8 +1,8 @@
 export type CarouselItemProps = {
   name: string
   image: string
-  id: number
-  handleSelection: (id: number) => void
+  countryId: string
+  handleSelection: (id: string) => void
   selected: boolean
 }
 

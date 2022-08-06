@@ -1,18 +1,18 @@
 import { FC } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from 'store/store'
-import { DetailContainer } from './subcomponents'
+import { DetailContainer, DetailImage } from './subcomponents'
 
 const Details: FC = () => {
   const details = useSelector((state: RootState) => state.details)
 
-  const { name, climate, population } = details.detailResponse
+  const { name, capital, flagImageUri } = details.detailResponse
 
   return (
     <DetailContainer>
       <div>{name}</div>
-      <div>{climate}</div>
-      <div>{population}</div>
+      <div>{capital}</div>
+      <DetailImage alt={name} src={flagImageUri} />
     </DetailContainer>
   )
 }

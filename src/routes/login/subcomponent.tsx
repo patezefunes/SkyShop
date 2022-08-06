@@ -10,6 +10,10 @@ export const LoginContainer = styled.div`
   width: 600px;
   height: 600px;
 
+  @media (max-width: 600px) {
+    width: 300px;
+  }
+
   button {
     width: 200px;
   }

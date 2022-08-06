@@ -1,7 +1,7 @@
 import { ButtonBody } from './subcomponents'
 import { ButtonType } from './types'
 
-const Button: React.FC<ButtonType> = ({ text, buttonType, ...otherProps }) => {
+const Button: React.FC<ButtonType> = ({ text, ...otherProps }) => {
   return <ButtonBody {...otherProps}>{text}</ButtonBody>
 }
 

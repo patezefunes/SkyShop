@@ -5,7 +5,7 @@ export const SignUpFormContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 400px;
+  width: 300px;
   height: 400px;
   border-radius: 8px;
   padding: 2rem 1rem;
@@ -23,6 +23,6 @@ export const SignUpTitle = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: black;
 `

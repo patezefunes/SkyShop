@@ -5,8 +5,9 @@ export const GlobalStyles = createGlobalStyle`
 body {
   margin:0;
   background-image: url(${backgroundImage});
-  @media screen and (max-width: 800px){
-    padding: 10px;
+
+  @media (max-width: 600px) {
+    background-repeat: no-repeat;
   }
 }
 

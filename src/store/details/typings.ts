@@ -5,14 +5,16 @@ export interface DetailState {
 }
 
 export interface RequestDetailResponse {
+  capital: string
   name: string
-  climate: string
-  population: string
+  flagImageUri: string
 }
 
 export interface DetailError {
   name: string
   message: string
 }
+
+export type CountryId = string
 
 export type DetailReturnType = Error | RequestDetailResponse

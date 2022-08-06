@@ -1,7 +1,7 @@
 export type CarouselProps = {
   name: string
   image: string
-  id: number
+  countryId: string
 }
 
 export type CarouselDataType = {

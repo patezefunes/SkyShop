@@ -6,8 +6,8 @@ import { CarouselContainer, InnerCarousel } from './subcomponents'
 const Carousel: FC<CarouselDataType> = ({ data }) => {
   const [width, setWidth] = useState<number>(0)
   const carousel = useRef<HTMLDivElement>(null)
-  const [selected, setSelected] = useState<number | null>(null)
-  const handleSelect = (id: number) => {
+  const [selected, setSelected] = useState<string | null>(null)
+  const handleSelect = (id: string) => {
     if (id === selected) setSelected(null)
     else setSelected(id)
   }
@@ -26,12 +26,12 @@ const Carousel: FC<CarouselDataType> = ({ data }) => {
       >
         {data.map((item) => (
           <CarouselItem
-            key={item.id}
+            key={item.countryId}
             name={item.name}
             image={item.image}
-            id={item.id}
+            countryId={item.countryId}
             handleSelection={handleSelect}
-            selected={selected === item.id ? true : false}
+            selected={selected === item.countryId ? true : false}
           />
         ))}
       </InnerCarousel>

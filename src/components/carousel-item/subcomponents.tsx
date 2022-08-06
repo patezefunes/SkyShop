@@ -8,6 +8,14 @@ export const CarouselItemContainer = styled(motion.div)`
   display: flex;
   position: static;
   flex-direction: column;
+
+  @media (max-width: 900px) {
+    min-width: 50%;
+  }
+
+  @media (max-width: 660px) {
+    min-width: 100%;
+  }
 `
 
 export const CarouselImage = styled.img`

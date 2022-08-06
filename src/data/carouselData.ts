@@ -2,42 +2,42 @@ import assets from '../assets/assets'
 
 export const carouselData = [
   {
-    id: 1,
+    countryId: 'Q414',
     name: 'Argentina',
     image: assets[0],
   },
   {
-    id: 2,
+    countryId: 'Q408',
     name: 'Australia',
     image: assets[1],
   },
   {
-    id: 3,
+    countryId: 'Q79',
     name: 'Egypt',
     image: assets[2],
   },
   {
-    id: 4,
+    countryId: 'Q38',
     name: 'Italia',
     image: assets[3],
   },
   {
-    id: 5,
+    countryId: 'Q17',
     name: 'Japan',
     image: assets[4],
   },
   {
-    id: 6,
+    countryId: 'Q96',
     name: 'Mexico',
     image: assets[5],
   },
   {
-    id: 7,
+    countryId: 'Q20',
     name: 'Norway',
     image: assets[6],
   },
   {
-    id: 8,
+    countryId: 'Q30',
     name: 'Usa',
     image: assets[7],
   },

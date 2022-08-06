@@ -1,3 +1,4 @@
 export type CarouselType = {
-  selectedCountry?: string;
-};
+  selectedCountry?: string
+  countryId?: string
+}
