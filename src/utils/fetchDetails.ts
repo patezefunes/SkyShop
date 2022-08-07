@@ -12,5 +12,6 @@ export const fetchDetails = async (id: string) => {
       },
     }
   )
+  console.log('Fetch done with ' + response.data.name)
   return response.data
 }
