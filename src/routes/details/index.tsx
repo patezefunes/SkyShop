@@ -1,18 +1,38 @@
-import { FC } from 'react'
-import { useSelector } from 'react-redux'
+import { FC, useEffect } from 'react'
+import { shallowEqual, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { RootState } from 'store/store'
 import { DetailContainer, DetailImage } from './subcomponents'
+import { TailSpin } from 'react-loader-spinner'
 
 const Details: FC = () => {
-  const details = useSelector((state: RootState) => state.details)
+  const navigate = useNavigate()
 
-  const { name, capital, flagImageUri } = details.detailResponse
+  const {
+    details: { detailResponse, detailError, loading },
+  } = useSelector((state: RootState) => state, shallowEqual)
+
+  useEffect(() => {
+    if (detailError) navigate('/error')
+  }, [detailError])
+
+  const { name, capital, flagImageUri } = detailResponse || {}
+
+  console.log('Esta cargando? ' + loading)
 
   return (
-    <DetailContainer>
-      <div>{name}</div>
-      <div>{capital}</div>
-      <DetailImage alt={name} src={flagImageUri} />
+    <DetailContainer loading={loading}>
+      {loading ? (
+        <>
+          <TailSpin />
+        </>
+      ) : (
+        <>
+          <div>{name}</div>
+          <div>{capital}</div>
+          <DetailImage alt={name} src={flagImageUri} />
+        </>
+      )}
     </DetailContainer>
   )
 }

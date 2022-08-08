@@ -7,4 +7,5 @@ export const themes = {
   lightgreen: '#e6ffe6',
   grayRGBA: 'rgba(181, 181, 181, 0.6)',
   lightgreenRGBA: 'rgba(230, 255, 230, 0.6)',
+  red: '#DF5F43',
 }

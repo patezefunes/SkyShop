@@ -16,6 +16,7 @@ const requestData = createAsyncThunk<
 
     return { name, capital, flagImageUri } as DetailReturnType
   } catch (error) {
+    console.log('Redux tiro error')
     return rejectWithValue(error)
   }
 })

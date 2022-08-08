@@ -19,6 +19,7 @@ const detailSlice = createSlice({
       .addCase(requestData.fulfilled, (state: DetailState, { payload }) => {
         state.loading = false
         state.detailResponse = payload as RequestDetailResponse
+        state.detailError = null
       })
       .addCase(requestData.rejected, (state: DetailState, { payload }) => {
         state.loading = false

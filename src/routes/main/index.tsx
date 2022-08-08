@@ -24,8 +24,8 @@ const Slider: FC = () => {
   const dispatch = useDispatch<AppDispatch>()
   const navigate = useNavigate()
 
-  const handleNavigate = async () => {
-    await dispatch(requestData(countryId))
+  const handleNavigate = () => {
+    dispatch(requestData(countryId))
     navigate('/details')
   }
 
